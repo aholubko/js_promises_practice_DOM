@@ -39,9 +39,7 @@ function promisesPractice() {
 
       document.removeEventListener('click', onLeftClick);
 
-      reject(
-        new Error('First promise was rejected in 3 seconds if not clicked'),
-      );
+      reject(new Error('First promise was rejected'));
     }, 3000);
 
     function onLeftClick(e) {
@@ -57,7 +55,7 @@ function promisesPractice() {
       clearTimeout(timerId);
       document.removeEventListener('click', onLeftClick);
 
-      resolve('First promise was resolved on a left click in the document');
+      resolve('First promise was resolved');
     }
 
     document.addEventListener('click', onLeftClick);
@@ -118,10 +116,7 @@ function promisesPractice() {
       settled = true;
       cleanup();
 
-      resolve(
-        'Third promise was resolved only after both left and right clicks' +
-          'happened',
-      );
+      resolve('Third promise was resolved');
     }
 
     function onLeft(e) {
